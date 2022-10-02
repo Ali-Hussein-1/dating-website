@@ -54,3 +54,17 @@
   .blue{
     color: blue;
   }
+
+
+  
+/* SignUp */
+
+.inputs{
+  width: 70%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
