@@ -68,3 +68,13 @@
   border-radius: 50px;
   box-sizing: border-box;
 }
+
+
+/* Home Page */
+
+.nav-bar{
+  height: 100px;
+  width :100vw;
+  background-color: red;
+}
+
