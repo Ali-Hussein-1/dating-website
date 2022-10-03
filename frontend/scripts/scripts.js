@@ -40,3 +40,9 @@ workshop_pages.postAPI = async (api_url, api_data, api_token = null) => {
 workshop_pages.loadFor = (page) => {
     eval("workshop_pages.load_" + page + "();");
 }
+
+
+const signup = document.getElementById("signup");
+signup.onclick = ()=>{
+    window.location.href = "./signup.html"
+}
