@@ -38,7 +38,6 @@
   .flex-col{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     color: #ccc;
   }
@@ -95,4 +94,38 @@
 
 .pages > li:first-child {
   text-decoration: underline;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 70px;
+  padding-top: 150px;
+  /* position: relative; */
+}
+
+
+.boxes{
+  background-color: aqua;
+  height: 400px;
+  width: 300px;
+  margin: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.boxes > div{
+  padding: 20px 0px 0px 20px;
+}
+
+.icons-box{
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-box > img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
 }
