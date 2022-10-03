@@ -20,4 +20,22 @@ class LandingController extends Controller
             "message" => "Success"
         ]);
     }
+
+    function signup(Request $request){
+        $user = new USER; 
+
+        $email = $request->email;
+        $password = $request->password;
+        $name = $request->name;
+        $location = $request->location;
+        $gender = $request->gender;
+        $bio = $request->bio;
+
+        $user->save();
+
+        return response()->json([
+            "status" => "Success",
+            "message" => $user
+        ]);
+    }
 }
