@@ -17,4 +17,15 @@ class HomeController extends Controller
         ]);
 
     }
+
+    function showFemales(){
+        $females = User::
+                    where('gender','female')
+                    ->get();
+        return response()->json([
+            "status" => "Success",
+            "data" => $females
+        ]);
+
+    }
 }
