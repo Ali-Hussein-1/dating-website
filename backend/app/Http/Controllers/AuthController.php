@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -22,6 +23,26 @@ class AuthController extends Controller
         }
 
         return $this->respondWithToken($token);
+    }
+
+    public function signup(Request $request){
+        $user = User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'location'=>$request->location,
+            'age'=>$request->age,
+            'gender'=>$request->gender,
+            'image'=>$request->image,
+            'bio'=>$request->bio
+        ]) ;
+
+        $user->save();
+
+        return response()->json([
+            "status" => "Success",
+            "message" => $user
+        ]);
     }
 
 
