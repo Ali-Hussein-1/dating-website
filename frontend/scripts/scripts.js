@@ -1,7 +1,7 @@
 const signup = document.getElementById("signup");
-const loginEmail = document.getElementById("email");
-const loginPassword = document.getElementById("email");
-const email = document.getElementById("email");
+const loginEmail = document.getElementById("loginEmail");
+const loginPassword = document.getElementById("loginPassword");
+const signinBtn = document.getElementById("signinBtn");
 
 signup.onclick = ()=>{
     window.location.href = "./signup.html"}
@@ -9,14 +9,17 @@ signup.onclick = ()=>{
 
 signinBtn.addEventListener('click', () => {
 
-    let formData = new FormData([]);
+    let formdata = new URLSearchParams();
+    formdata.append("email",loginEmail.value);
+    formdata.append("password",loginPassword.value);
     axios
-        .post('http://127.0.0.1:8000/api/v1/login', formData)
+        .post('http://127.0.0.1:8000/api/v1/login', formdata)
             .then((res) => {
-                if (res.data[0].email == email.value) { {
-                        localStorage.setItem('userId', result.data[0].user_id);
-                        localStorage.setItem('user_email', result.data[0].client_email);
-                        window.location.href = './home.html';
+                if (res.data["message"][0].id) { {
+                        localStorage.setItem('userId', res.data.message[0].id);
+                        localStorage.setItem('user_email', res.data.message[0].email);
+
+                        window.location.replace('./home.html');
                     };
                 }
             })
