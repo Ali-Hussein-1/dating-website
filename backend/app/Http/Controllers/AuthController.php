@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 
@@ -26,16 +27,16 @@ class AuthController extends Controller
     }
 
     public function signup(Request $request){
-        $user = User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>$request->password,
-            'location'=>$request->location,
-            'age'=>$request->age,
-            'gender'=>$request->gender,
-            'image'=>$request->image,
-            'bio'=>$request->bio
-        ]) ;
+        $user = new User ;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->location = $request->location;
+            $user->age = $request->age;
+            $user->gender = $request->gender;
+            $user->image = $request->image;
+            $user->bio = $request->bio;
+     
 
         $user->save();
 
