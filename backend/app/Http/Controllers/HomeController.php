@@ -28,4 +28,13 @@ class HomeController extends Controller
         ]);
 
     }
+
+    function showAll(){
+        $all = User::all();
+        return response()->json([
+            "status" => "Success",
+            "data" => $all
+        ]);
+
+    }
 }
