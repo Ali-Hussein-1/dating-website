@@ -21,7 +21,7 @@
 
   .container{
     display: block;
-    height : 70%;
+    height : 80%;
     width: 60%;
     background-color: black;
     opacity: 0.8;
@@ -61,6 +61,7 @@
   
 /* SignUp */
 
+
 .inputs2{
   width: 70%;
   padding: 12px 20px;
@@ -70,6 +71,15 @@
   box-sizing: border-box;
 }
 
+.btn{
+  background-color: blue;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /* Home Page */
 
@@ -103,7 +113,6 @@
   background-color: #2196F3;
   padding: 70px;
   padding-top: 150px;
-  /* position: relative; */
 }
 
 
