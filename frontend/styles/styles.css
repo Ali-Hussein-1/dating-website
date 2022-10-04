@@ -86,7 +86,7 @@
 .nav-bar{
   height: 80px;
   width :100vw;
-  background-color: red;
+  background-color: purple;
   position: fixed;
 }
 
@@ -110,14 +110,15 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196F3;
+  background-color: lightblue;
   padding: 70px;
   padding-top: 150px;
 }
 
 
 .boxes{
-  background-color: aqua;
+  background-color: lightsalmon;
+  border-radius: 50px;
   height: 400px;
   width: 300px;
   margin: 20px 20px 20px 20px;
@@ -139,3 +140,4 @@
   width: 100px;
   border-radius: 50px;
 }
+
