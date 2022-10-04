@@ -15,4 +15,5 @@ Route::group(["prefix"=>"v1"],function(){
     Route::post("/login", [LandingController::class, "login"])->name("login");
     Route::get("/showmales", [HomeController::class, "showMales"])->name("showmales");
     Route::get("/showfemales", [HomeController::class, "showFemales"])->name("showfemales");
+    Route::get("/showall", [HomeController::class, "showAll"])->name("showall");
 });
