@@ -20,4 +20,13 @@ class FavouritesController extends Controller
             "status" => "Success",
         ]);
     }
+
+    function getFavorite(Request $request){
+       return DB::table('users')
+                    ->join('favourites','id',"=",'id_2')
+                    ->select('uesrs.*')
+                    ->get();
+    }
 }
+
+
