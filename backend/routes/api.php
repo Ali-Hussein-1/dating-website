@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FavouritesController;
 
 Route::group(["prefix"=>"v1"],function(){
 
@@ -16,5 +17,5 @@ Route::group(["prefix"=>"v1"],function(){
     Route::get("/showmales", [HomeController::class, "showMales"])->name("showmales");
     Route::get("/showfemales", [HomeController::class, "showFemales"])->name("showfemales");
     Route::get("/showall", [HomeController::class, "showAll"])->name("showall");
-    Route::get("/addfavorite", [FavoritesController::class, "addFavorite"])->name("addfavorite");
+    Route::post("/addfavorite", [FavouritesController::class, "addFavorite"])->name("addfavorite");
 });
