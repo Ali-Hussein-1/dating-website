@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('chats', function (Blueprint $table) {
             $table->id();
+            $table->text("text");
             $table->integer("user_id")->references('id')->on("users");
             $table->integer("user_id_1")->references('id')->on("users");
             $table->timestamps();
