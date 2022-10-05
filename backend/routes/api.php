@@ -16,4 +16,5 @@ Route::group(["prefix"=>"v1"],function(){
     Route::get("/showmales", [HomeController::class, "showMales"])->name("showmales");
     Route::get("/showfemales", [HomeController::class, "showFemales"])->name("showfemales");
     Route::get("/showall", [HomeController::class, "showAll"])->name("showall");
+    Route::get("/addfavorite", [FavoritesController::class, "addFavorite"])->name("addfavorite");
 });
