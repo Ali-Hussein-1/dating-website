@@ -21,4 +21,5 @@ Route::group(["prefix"=>"v1"],function(){
     Route::post("/addfavorite", [FavouritesController::class, "addFavorite"])->name("addfavorite");
     Route::get("/getfavorite", [FavouritesController::class, "getFavorite"])->name("getfavorite");
     Route::post("/addblock", [BlockController::class, "addBlock"])->name("addblock");
+    Route::get("/getblock", [BlockController::class, "getBlock"])->name("getblock");
 });
