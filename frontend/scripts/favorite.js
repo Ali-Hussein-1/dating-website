@@ -1,15 +1,19 @@
+// Declaring some constants
 const favorite = document.getElementById("favorite");
 const home = document.getElementById("home");
 const container = document.getElementById("container");
 
+// an onclick event to take to the home page 
 home.onclick = ()=>{
     window.location.href = "./home.html"
 }
     
+// an onclick event to take to the favorites page 
 favorite.onclick = ()=>{
     window.location.href = "./favorite.html"
 }
 
+// Displaying favorite users by axios(linking to the DB)
 axios
     .get('http://127.0.0.1:8000/api/v1/getfavorite')
     .then((res) => {

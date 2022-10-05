@@ -1,19 +1,20 @@
+// Declaring some constants
 const favorite = document.getElementById("favorite");
 const home = document.getElementById("home");
 const signinBtn = document.getElementById("signinBtn");
 const email = document.getElementById("email");
 const container = document.getElementById("container");
 
-
-
+// an onclick event to take to the home page 
 home.onclick = () => {
     window.location.href = "./home.html"
 }
-
+// an onclick event to take to the favorite page
 favorite.onclick = () => {
     window.location.href = "./favorite.html"
 }
 
+// Displaying users by axios(linking to the DB)
 axios
     .get('http://127.0.0.1:8000/api/v1/showall')
     .then((res) => {
@@ -45,6 +46,8 @@ axios
         </div>`;
 
         });
+
+        // Adding to favorite upon clicking the favorite icon
         const favoriteIcon = document.querySelectorAll(".favorite");
         favoriteIcon.forEach(element => {
             let userId = localStorage.getItem('userId');
@@ -60,6 +63,8 @@ axios
                     });
             }
         });
+
+        // Blocking upon clicking the block icon
         const blockIcon = document.querySelectorAll(".block");
         blockIcon.forEach(element => {
             let userId = localStorage.getItem('userId');

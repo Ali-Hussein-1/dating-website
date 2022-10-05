@@ -1,3 +1,4 @@
+// Declaring some constants
 const signupEmail = document.getElementById("signupEmail");
 const signupPassword = document.getElementById("signupPassword");
 const signupName = document.getElementById("signupName");
@@ -6,7 +7,7 @@ const signupLocation = document.getElementById("signupLocation");
 const signupAge = document.getElementById("signupAge");
 const signupBtn = document.getElementById("signupBtn");
 
-
+// signup linking
 signupBtn.onclick = ()=>{
     let formdata = new URLSearchParams();
     formdata.append("email",signupEmail.value);

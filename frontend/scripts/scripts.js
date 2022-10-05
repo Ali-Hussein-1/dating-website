@@ -1,12 +1,14 @@
+// Declaring some constants
 const signup = document.getElementById("signup");
 const loginEmail = document.getElementById("loginEmail");
 const loginPassword = document.getElementById("loginPassword");
 const signinBtn = document.getElementById("signinBtn");
 
+// an onclick event to take to the signup page upon clicking (signup) in the login page
 signup.onclick = ()=>{
     window.location.href = "./signup.html"}
 
-
+// signin linking
 signinBtn.addEventListener('click', () => {
 
     let formdata = new URLSearchParams();
