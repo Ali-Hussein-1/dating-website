@@ -14,7 +14,7 @@ class AuthController extends Controller
         $this->middleware('auth:api', ['except' => ['login']]);
     }
 
-  
+    // Authorized login
     public function login()
     {
         $credentials = request(['email', 'password']);
@@ -25,7 +25,7 @@ class AuthController extends Controller
 
         return $this->respondWithToken($token);
     }
-
+    // Authorized signup
     public function signup(Request $request){
         $user = new User ;
             $user->name = $request->name;

@@ -9,6 +9,7 @@ use App\Models\User;
 
 class BlockController extends Controller
 {
+    // Function to add a blocked user to the DB
     function addBlock(Request $request){
         DB::table('blocks')->insert(
             ['blocker_id' => $request->blocker_id ,
@@ -20,7 +21,7 @@ class BlockController extends Controller
             "status" => "Success",
         ]);
     }
-
+    // Function to get blocked users from the DB
     function getBlock(){
         return DB::table('users')
                      ->join('blocks','id',"=",'blocker_id')

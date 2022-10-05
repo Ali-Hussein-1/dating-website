@@ -9,7 +9,8 @@ use App\Models\Favourite;
 use App\Models\User;
 
 class FavouritesController extends Controller
-{
+{   
+    // Function to add user to the favorite list
     function addFavorite(Request $request){
         DB::table('favourites')->insert(
             ['id_1' => $request->id_1 ,
@@ -22,6 +23,7 @@ class FavouritesController extends Controller
         ]);
     }
 
+    // Function to display user to the favorite list
     function getFavorite(){
        return DB::table('users')
                     ->join('favourites','id',"=",'id_2')
