@@ -21,5 +21,12 @@ class BlockController extends Controller
         ]);
     }
 
+    function getBlock(){
+        return DB::table('users')
+                     ->join('blocks','id',"=",'blocker_id')
+                     ->select('users.*')
+                     ->get();
+     }
+
 
 }
