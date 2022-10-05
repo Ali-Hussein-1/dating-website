@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Favourite;
+use App\Models\User;
 
 class FavouritesController extends Controller
 {
@@ -21,7 +22,7 @@ class FavouritesController extends Controller
         ]);
     }
 
-    function getFavorite(Request $request){
+    function getFavorite(){
        return DB::table('users')
                     ->join('favourites','id',"=",'id_2')
                     ->select('uesrs.*')
