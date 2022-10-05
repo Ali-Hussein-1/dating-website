@@ -135,6 +135,7 @@
 .icons-box{
   display: flex;
   justify-content: space-around;
+  cursor: pointer;
 }
 
 .img-box > img{
