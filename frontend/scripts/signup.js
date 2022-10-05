@@ -8,7 +8,6 @@ const signupBtn = document.getElementById("signupBtn");
 
 
 signupBtn.onclick = ()=>{
-    console.log("hi");
     let formdata = new URLSearchParams();
     formdata.append("email",signupEmail.value);
     formdata.append("password",signupPassword.value);
@@ -22,6 +21,6 @@ signupBtn.onclick = ()=>{
     axios
         .post('http://127.0.0.1:8000/api/v1/signup', formdata)
             .then((res) => {
-                console.log(res.data.data[0]);
+                console.log(res.data.data);
                 })
             }
