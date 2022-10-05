@@ -6,6 +6,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FavouritesController;
+use App\Http\Controllers\BlockController;
 
 Route::group(["prefix"=>"v1"],function(){
 
@@ -19,4 +20,5 @@ Route::group(["prefix"=>"v1"],function(){
     Route::get("/showall", [HomeController::class, "showAll"])->name("showall");
     Route::post("/addfavorite", [FavouritesController::class, "addFavorite"])->name("addfavorite");
     Route::get("/getfavorite", [FavouritesController::class, "getFavorite"])->name("getfavorite");
+    Route::post("/addblock", [BlockController::class, "addBlock"])->name("addblock");
 });

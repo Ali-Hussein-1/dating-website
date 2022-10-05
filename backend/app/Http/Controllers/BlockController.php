@@ -9,7 +9,7 @@ use App\Models\User;
 
 class BlockController extends Controller
 {
-    function addBlocks(Request $request){
+    function addBlock(Request $request){
         DB::table('blocks')->insert(
             ['blocker_id' => $request->blocker_id ,
              'blocked_id' => $request->blocked_id]
