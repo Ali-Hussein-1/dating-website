@@ -25,7 +25,7 @@ class FavouritesController extends Controller
     function getFavorite(){
        return DB::table('users')
                     ->join('favourites','id',"=",'id_2')
-                    ->select('uesrs.*')
+                    ->select('users.*')
                     ->get();
     }
 }
