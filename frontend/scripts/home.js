@@ -3,6 +3,8 @@ const home = document.getElementById("home");
 const signinBtn = document.getElementById("signinBtn");
 const email = document.getElementById("email");
 const container = document.getElementById("container");
+const favoriteIcon = document.getElementById("favoriteIcon");
+const blockIcon = document.getElementById("blockIcon");
 
 
 
@@ -19,7 +21,7 @@ axios
     .then((res) => {
         let arr = res.data.data;
         arr.forEach(box => {
-            container.innerHTML+=`<div class="boxes" id="box" data-value="">
+            container.innerHTML+=`<div class="boxes" id="box" data-value="${box.id}">
             <div class="img-box">
                 <img src="${box.image}" alt="Not found">
             </div>
@@ -39,9 +41,23 @@ axios
                 Bio:${box.bio}
             </div>
             <div class="icons-box">
-                <i class="material-icons">favorite</i>
+                <i class="material-icons" id="fav-${box.id}">favorite</i>
                 <i class="material-icons">block</i>
             </div>
-        </div>`
+        </div>`;
+        
         });
     })
+
+    favoriteIcon.onclick = () => {
+        let userId = localStorage.getItem('userId');
+        let formdata = new URLSearchParams();
+        formdata.append('id_1',userId);
+        formdata.append('id_2',);
+        axios
+            .post('http://127.0.0.1:8000/api/v1/addfavorite',)
+            .then((res) => {
+
+    })
+    }
+   
